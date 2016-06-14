@@ -17,9 +17,29 @@ ADDRESS=`echo "$OUT" | head -n 1`
 PRIV_KEY=`echo "$OUT" | tail -n 1`
 ENC_KEY=`echo "$PRIV_KEY" | openssl enc -$CYPHER -a -salt -e`
 
-echo "Address: $ADDRESS" | head -n 1
-# echo "DEBUG: Private Key: $PRIV_KEY"
-echo "Encrypted private key:"
+# BEGIN PRINTING OUTPUT
+
+echo "# $ADDRESS"
+echo ""
+echo "You can check the current balance of this wallet at"
+echo "https://blockchain.info/address/$ADDRESS."
+echo ""
+echo "This is the encrypted private key for this wallet."
+echo ""
+echo "\`\`\`"
 echo "$ENC_KEY"
-echo "Cypher: $CYPHER"
-echo "Decrypt with 'openssl enc -$CYPHER -a -salt -d'"
+echo "\`\`\`"
+echo ""
+echo "It is encryped using $CYPHER and a password."
+echo ""
+echo "The following command was used to cypher-encode the private key."
+echo ""
+echo "\`\`\`sh"
+echo "openssl enc -$CYPHER -a -salt"
+echo "\`\`\`"
+echo ""
+echo "You should be able to decode the key with the following command."
+echo ""
+echo "\`\`\`sh"
+echo "openssl enc -$CYPHER -a -salt -d"
+echo "\`\`\`"
