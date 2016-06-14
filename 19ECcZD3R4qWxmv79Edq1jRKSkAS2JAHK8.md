@@ -1,5 +1,8 @@
 # 19ECcZD3R4qWxmv79Edq1jRKSkAS2JAHK8
 
+You can check the current balance of this wallet at 
+https://blockchain.info/address/19ECcZD3R4qWxmv79Edq1jRKSkAS2JAHK8.
+
 This is the encrypted private key for this wallet. 
 
 ```
